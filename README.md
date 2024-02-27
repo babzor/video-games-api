@@ -1,5 +1,12 @@
 # README
 
+Api pas fonctionnelle pour le moment...
+
+Le modèle Platform n'est pas bien défini
+
+
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
