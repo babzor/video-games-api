@@ -1,8 +1,5 @@
 # README
 
-Api pas fonctionnelle pour le moment...
-
-Le modèle Platform n'est pas bien défini
 
 
 ----------
