@@ -10,19 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_02_27_141335) do
+ActiveRecord::Schema[7.0].define(version: 2024_02_27_134210) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "platforms", force: :cascade do |t|
+  create_table "platforms", id: false, force: :cascade do |t|
+    t.string "code", null: false
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["code"], name: "index_platforms_on_code", unique: true
   end
 
-  create_table "platforms_video_games", id: false, force: :cascade do |t|
-    t.bigint "video_game_id", null: false
-    t.bigint "platform_id", null: false
+  create_table "video_game_platforms", id: false, force: :cascade do |t|
+    t.bigint "video_game_id"
+    t.string "platform_code", null: false
+    t.index ["platform_code"], name: "index_video_game_platforms_on_platform_code"
+    t.index ["video_game_id"], name: "index_video_game_platforms_on_video_game_id"
   end
 
   create_table "video_games", force: :cascade do |t|

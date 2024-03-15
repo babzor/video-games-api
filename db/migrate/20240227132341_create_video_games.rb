@@ -4,7 +4,7 @@ class CreateVideoGames < ActiveRecord::Migration[7.0]
       t.string :name
       t.date :release_date
       t.string :studio
-      t.integer :ratings
+      t.float :ratings
 
       t.timestamps
     end

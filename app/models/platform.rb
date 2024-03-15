@@ -1,4 +1,8 @@
 class Platform < ApplicationRecord
-    has_and_belongs_to_many :video_games, join_table: :platforms_video_games, foreign_key: :platform_name, association_foreign_key: :video_game_id
+    self.primary_key = 'code'
+
+    has_many :video_game_platforms, foreign_key: 'platform_code'
+    has_many :video_games, through: :video_game_platforms
+
     validates :name, presence: true
 end
