@@ -38,7 +38,7 @@ class Api::V1::VideoGamesController < ApplicationController
   private
 
   def video_game_params
-    params.require(:video_game).permits(:name, :release_date, :studio, :ratings, :platforms)
+    params.require(:video_game).permits(:name, :release_date, :studio, :ratings, platforms: [])
   end
 
   def find_video_game
